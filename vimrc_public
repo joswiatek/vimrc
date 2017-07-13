@@ -1,0 +1,103 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" nerdcommenter
+Plugin 'scrooloose/nerdcommenter'
+" nerdtree
+Plugin 'scrooloose/nerdtree'
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
+
+" Keep Plugin commands between vundle#begin/end.
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+" Enable full color support
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
+colorscheme badwolf " Custom color scheme
+
+syntax enable " Enable syntax processing
+
+set tabstop=4 " number of visual spaces per TAB press
+
+set softtabstop=4 " number of spaces in tab when editing
+
+set expandtab " Insert spaces when TAB is pressed
+
+set number " show line numbers
+
+set ruler " show 80 character line
+
+set colorcolumn=80 " Create gray column in 80 char column
+
+" Highlight background as red  when over 80 characters
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
+set showcmd " show last command in bottom bar
+
+" set cursorline " horizontal highlight on current cursor line
+" use a highlight instead of a underline
+" hi CursorLine term=bold cterm=bold guibg=Grey40
+
+filetype indent on " load filetype-specific indent files
+
+set wildmenu " visual autocomplete for command menu
+
+"set lazyredraw " redraw only when necessary
+
+set showmatch " highlight matching [{()}]
+
+set incsearch " search as characters are typed
+
+set hlsearch " highlight matches
+
+set ignorecase " ignore case in searches
+
+set smartcase " don't ignore case in searches that include capital letters
+
+"set textwidth=80 " lines will break after 80 characters
+
+let mapleader="," " map leader to comma
+
+set backspace=indent,eol,start " fix backspace
+
+" Tell YouCompleteMe where to find python, to enable semantic completion
+let g:ycm_python_binary_path = 'python'
+
+" shortcut to turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR> 
+
+" move vertically by visual lines
+nnoremap j gj
+nnoremap k gk
+
+" move to beginning/end of line
+nnoremap B ^ 
+nnoremap E $
+
+inoremap jk <esc>
