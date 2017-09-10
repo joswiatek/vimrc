@@ -1,3 +1,3 @@
 # vimrc
 
-Temporary repo to get vimrc to work
+Public facing vimrc repository
